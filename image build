@@ -1,0 +1,15 @@
+echo " i am building docker image" 
+sudo docker build -t httpd-web:$imageTag .
+
+echo " list the docker images"
+sudo docker images
+
+echo "Login to the docker hub" 
+sudo docker login -u xxxx -p xxxxxx
+
+
+echo "tag the local image"
+sudo docker tag httpd-web:$imageTag gangireddydanam/httpd-web:$imageTag
+
+echo " push the image to the docker hub"
+sudo docker push gangireddydanam/httpd-web:$imageTag
